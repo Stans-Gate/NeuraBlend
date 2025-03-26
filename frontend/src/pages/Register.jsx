@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Login() {
+function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -53,12 +53,12 @@ function Login() {
         <h1 className="text-3xl font-bold text-[#533933]  mb-2">
           Welcome to NeuraBlend
         </h1>
-        <p className="text-[#977968] ">Sign in to access unlimited learning</p>
+        <p className="text-[#977968] ">Create an account to get started</p>
       </div>
 
       <div className="bg-[#fffff] rounded-xl shadow-lg overflow-hidden">
         <div className="p-8">
-          <h2 className="text-[#533933] font-bold mb-6">Login</h2>
+          <h2 className="text-[#533933] font-bold mb-6">Register</h2>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
@@ -98,7 +98,7 @@ function Login() {
               }`}
               disabled={isLoading}
             >
-              {isLoading ? "Logging in..." : "Login"}
+              {isLoading ? "Registering..." : "Register"}
             </button>
           </form>
 
@@ -126,4 +126,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;

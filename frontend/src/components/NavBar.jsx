@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,46 +13,65 @@ function NavBar() {
   }, [location]);
 
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-[#fbe3bb] shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <span className="text-primary-600 text-2xl font-bold">Quesiton Chaser</span>
+            <img src={logo} alt="NeuraBlend Logo" className="h-8 w-auto" />
+            <span className="text-[#533933] text-2xl font-bold">
+              NeuraBlend
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
-            <Link
-              to="/"
-              className={`text-gray-600 hover:text-primary-600 transition-colors ${
-                location.pathname === "/" ? "text-primary-600 font-medium" : ""
-              }`}
-            >
-              Home
-            </Link>
+            <>
+              <Link
+                to="/login"
+                className={`text-[#977968] hover:text-[#533933] transition-colors ${
+                  location.pathname === "/" ? "text-[#977968] font-medium" : ""
+                }`}
+              >
+                Login
+              </Link>
+              <Link
+                to="/register"
+                className={`text-[#977968] hover:text-[#533933] transition-colors ${
+                  location.pathname === "/" ? "text-[#977968] font-medium" : ""
+                }`}
+              >
+                Register
+              </Link>
+            </>
             {isLoggedIn && (
               <>
                 <Link
                   to="/dashboard"
-                  className={`text-gray-600 hover:text-primary-600 transition-colors ${
-                    location.pathname === "/dashboard" ? "text-primary-600 font-medium" : ""
+                  className={`text-[#977968] hover:text-[#533933]  transition-colors ${
+                    location.pathname === "/dashboard"
+                      ? "text-primary-600 font-medium"
+                      : ""
                   }`}
                 >
                   Dashboard
                 </Link>
                 <Link
                   to="/study-plans"
-                  className={`text-gray-600 hover:text-primary-600 transition-colors ${
-                    location.pathname === "/study-plans" ? "text-primary-600 font-medium" : ""
+                  className={`text-[#977968] hover:text-[#533933] transition-colors ${
+                    location.pathname === "/study-plans"
+                      ? "text-primary-600 font-medium"
+                      : ""
                   }`}
                 >
                   Study Plans
                 </Link>
                 <Link
                   to="/create-plan"
-                  className={`text-gray-600 hover:text-primary-600 transition-colors ${
-                    location.pathname === "/create-plan" ? "text-primary-600 font-medium" : ""
+                  className={`text-[#977968] hover:text-[#533933]  transition-colors ${
+                    location.pathname === "/create-plan"
+                      ? "text-primary-600 font-medium"
+                      : ""
                   }`}
                 >
                   Create Plan
@@ -64,7 +84,7 @@ function NavBar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-500 hover:text-primary-600 focus:outline-none"
+              className="text-[#977968] hover:text-[#533933]  focus:outline-none"
             >
               <svg
                 className="h-6 w-6"

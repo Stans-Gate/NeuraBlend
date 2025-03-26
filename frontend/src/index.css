@@ -45,3 +45,7 @@
     @apply bg-white rounded-lg shadow-md overflow-hidden;
   }
 }
+
+.herobutton {
+  margin: 100px 0px 200px 0px
+}
