@@ -1,1 +1,5 @@
-gradio
+fastapi
+uvicorn
+sqlalchemy
+openai
+python-dotenv
