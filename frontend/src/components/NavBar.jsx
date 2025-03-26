@@ -1,6 +1,7 @@
+// frontend/src/components/NavBar.jsx
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "/assets/logo.png";
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,32 +27,32 @@ function NavBar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
-            <>
-              <Link
-                to="/login"
-                className={`text-[#977968] hover:text-[#533933] transition-colors ${
-                  location.pathname === "/" ? "text-[#977968] font-medium" : ""
-                }`}
-              >
-                Login
-              </Link>
-              <Link
-                to="/register"
-                className={`text-[#977968] hover:text-[#533933] transition-colors ${
-                  location.pathname === "/" ? "text-[#977968] font-medium" : ""
-                }`}
-              >
-                Register
-              </Link>
-            </>
+            {!isLoggedIn && (
+              <>
+                <Link
+                  to="/login"
+                  className={`text-[#977968] hover:text-[#533933] transition-colors ${
+                    location.pathname === "/login" ? "text-[#533933] font-medium" : ""
+                  }`}
+                >
+                  Login
+                </Link>
+                <Link
+                  to="/register"
+                  className={`text-[#977968] hover:text-[#533933] transition-colors ${
+                    location.pathname === "/register" ? "text-[#533933] font-medium" : ""
+                  }`}
+                >
+                  Register
+                </Link>
+              </>
+            )}
             {isLoggedIn && (
               <>
                 <Link
                   to="/dashboard"
-                  className={`text-[#977968] hover:text-[#533933]  transition-colors ${
-                    location.pathname === "/dashboard"
-                      ? "text-primary-600 font-medium"
-                      : ""
+                  className={`text-[#977968] hover:text-[#533933] transition-colors ${
+                    location.pathname === "/dashboard" ? "text-[#533933] font-medium" : ""
                   }`}
                 >
                   Dashboard
@@ -59,22 +60,26 @@ function NavBar() {
                 <Link
                   to="/study-plans"
                   className={`text-[#977968] hover:text-[#533933] transition-colors ${
-                    location.pathname === "/study-plans"
-                      ? "text-primary-600 font-medium"
-                      : ""
+                    location.pathname === "/study-plans" ? "text-[#533933] font-medium" : ""
                   }`}
                 >
                   Study Plans
                 </Link>
                 <Link
                   to="/create-plan"
-                  className={`text-[#977968] hover:text-[#533933]  transition-colors ${
-                    location.pathname === "/create-plan"
-                      ? "text-primary-600 font-medium"
-                      : ""
+                  className={`text-[#977968] hover:text-[#533933] transition-colors ${
+                    location.pathname === "/create-plan" ? "text-[#533933] font-medium" : ""
                   }`}
                 >
                   Create Plan
+                </Link>
+                <Link
+                  to="/shop"
+                  className={`text-[#977968] hover:text-[#533933] transition-colors ${
+                    location.pathname === "/shop" ? "text-[#533933] font-medium" : ""
+                  }`}
+                >
+                  Shop
                 </Link>
               </>
             )}
@@ -84,7 +89,7 @@ function NavBar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-[#977968] hover:text-[#533933]  focus:outline-none"
+              className="text-[#977968] hover:text-[#533933] focus:outline-none"
             >
               <svg
                 className="h-6 w-6"
@@ -108,13 +113,24 @@ function NavBar() {
         {/* Mobile menu */}
         {isOpen && (
           <div className="md:hidden pt-2 pb-4 space-y-2">
-            <Link
-              to="/"
-              className="block px-4 py-2 text-gray-600 hover:bg-primary-50 hover:text-primary-600 rounded-md"
-              onClick={() => setIsOpen(false)}
-            >
-              Home
-            </Link>
+            {!isLoggedIn && (
+              <>
+                <Link
+                  to="/login"
+                  className="block px-4 py-2 text-gray-600 hover:bg-primary-50 hover:text-primary-600 rounded-md"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Login
+                </Link>
+                <Link
+                  to="/register"
+                  className="block px-4 py-2 text-gray-600 hover:bg-primary-50 hover:text-primary-600 rounded-md"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Register
+                </Link>
+              </>
+            )}
             {isLoggedIn && (
               <>
                 <Link
@@ -137,6 +153,13 @@ function NavBar() {
                   onClick={() => setIsOpen(false)}
                 >
                   Create Plan
+                </Link>
+                <Link
+                  to="/shop"
+                  className="block px-4 py-2 text-gray-600 hover:bg-primary-50 hover:text-primary-600 rounded-md"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Shop
                 </Link>
               </>
             )}

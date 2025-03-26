@@ -1,3 +1,4 @@
+// frontend/src/components/Dashboard.jsx
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -5,6 +6,7 @@ function Dashboard() {
   const [message, setMessage] = useState("");
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [userBadges, setUserBadges] = useState([]);
 
   useEffect(() => {
     const userId = localStorage.getItem("userId");
@@ -14,6 +16,7 @@ function Dashboard() {
       return;
     }
 
+    // Fetch user data
     fetch(`http://127.0.0.1:8000/users/${userId}`)
       .then((res) => res.json())
       .then((data) => {
@@ -21,6 +24,18 @@ function Dashboard() {
           setMessage(`Error: ${data.detail}`);
         } else {
           setUserData(data);
+          
+          // Fetch user badges
+          fetch(`http://127.0.0.1:8000/users/${userId}/badges`)
+            .then((badgeRes) => badgeRes.json())
+            .then((badgeData) => {
+              if (Array.isArray(badgeData)) {
+                setUserBadges(badgeData);
+              }
+            })
+            .catch((err) => {
+              console.error("Error fetching badges:", err);
+            });
         }
         setLoading(false);
       })
@@ -82,7 +97,7 @@ function Dashboard() {
           <h3 className="text-xl font-semibold text-gray-900 mb-4">Learning Stats</h3>
           <div className="mb-4">
             <div className="flex justify-between items-center mb-2">
-              <span className="text-gray-600">Total Points</span>
+              <span className="text-gray-600">Total XP</span>
               <span className="font-bold text-primary-600">{userData.total_points}</span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2.5">
@@ -93,12 +108,51 @@ function Dashboard() {
             </div>
             <p className="text-xs text-gray-500 mt-1">
               {userData.total_points < 100 
-                ? `Earn ${100 - userData.total_points} more points to reach the next level!` 
+                ? `Earn ${100 - userData.total_points} more XP to reach the next level!` 
                 : "Great job on your progress!"}
+            </p>
+          </div>
+          
+          <div className="mb-4">
+            <div className="flex justify-between items-center mb-2">
+              <span className="text-gray-600">Kudos</span>
+              <span className="font-bold text-secondary-600">{userData.kudos}</span>
+            </div>
+            <div className="w-full bg-gray-200 rounded-full h-2.5">
+              <div 
+                className="bg-secondary-600 h-2.5 rounded-full" 
+                style={{ width: `${Math.min(100, (userData.kudos / 20) * 100)}%` }}
+              ></div>
+            </div>
+            <p className="text-xs text-gray-500 mt-1">
+              {userData.kudos > 0 
+                ? `You have ${userData.kudos} Kudos to spend in the Shop!` 
+                : "Earn Kudos by answering questions correctly on your first try!"}
             </p>
           </div>
         </div>
       </div>
+
+      {/* User Badges Section */}
+      {userBadges.length > 0 && (
+        <div className="mb-8">
+          <h3 className="text-xl font-semibold text-gray-900 mb-4">Your Badges</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {userBadges.map((badge) => (
+              <div key={badge.id} className="flex flex-col items-center">
+                <div className="w-16 h-16 mb-2">
+                  <img 
+                    src={badge.image_path} 
+                    alt={badge.name} 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <p className="text-sm font-medium text-center">{badge.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Link 
@@ -117,13 +171,13 @@ function Dashboard() {
           <p className="text-secondary-100">Generate a new AI-powered study plan.</p>
         </Link>
         
-        <div className="card p-6 bg-gradient-to-br from-gray-700 to-gray-900 text-white">
-          <h3 className="text-xl font-semibold mb-2">Need Help?</h3>
-          <p className="text-gray-300 mb-4">Have questions about using Learn Smarter?</p>
-          <button className="btn text-sm px-3 py-1 bg-white text-gray-800 hover:bg-gray-100">
-            View Tutorial
-          </button>
-        </div>
+        <Link 
+          to="/shop" 
+          className="card p-6 bg-gradient-to-br from-yellow-500 to-yellow-700 text-white hover:shadow-lg transition-shadow"
+        >
+          <h3 className="text-xl font-semibold mb-2">Visit Shop</h3>
+          <p className="text-yellow-100">Spend your Kudos on learning badges!</p>
+        </Link>
       </div>
     </div>
   );

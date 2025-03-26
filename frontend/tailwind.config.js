@@ -1,44 +1,40 @@
 /** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 module.exports = {
-    content: [
-      "./index.html",
-      "./src/**/*.{js,ts,jsx,tsx}",
-    ],
+    content: ["./src/**/*.{js,jsx,ts,tsx}"],
     theme: {
       extend: {
+        fontFamily: {
+          sans: ["Inter", "sans-serif"],
+          heading: ["Poppins", "sans-serif"],
+        },
         colors: {
           primary: {
-            50: '#eef2ff',
-            100: '#e0e7ff',
-            200: '#c7d2fe',
-            300: '#a5b4fc',
-            400: '#818cf8',
-            500: '#6366f1',
-            600: '#4f46e5',
-            700: '#4338ca',
-            800: '#3730a3',
-            900: '#312e81',
-            950: '#1e1b4b',
+            50: "#f0f9ff",
+            100: "#e0f2fe",
+            200: "#bae6fd",
+            300: "#7dd3fc",
+            400: "#38bdf8",
+            500: "#0ea5e9",
+            600: "#0284c7",
+            700: "#0369a1",
+            800: "#075985",
+            900: "#0c4a6e",
           },
           secondary: {
-            50: '#f0fdf4',
-            100: '#dcfce7',
-            200: '#bbf7d0',
-            300: '#86efac',
-            400: '#4ade80',
-            500: '#22c55e',
-            600: '#16a34a',
-            700: '#15803d',
-            800: '#166534',
-            900: '#14532d',
-            950: '#052e16',
+            50: "#fef8e7",
+            100: "#fef2c0",
+            200: "#fce588",
+            300: "#fbd256",
+            400: "#fab228",
+            500: "#f99b09",
+            600: "#f47307",
+            700: "#ca520c",
+            800: "#a13e11",
+            900: "#82320f",
           },
-        },
-        fontFamily: {
-          sans: ['Inter', 'sans-serif'],
-          heading: ['Poppins', 'sans-serif'],
         },
       },
     },
-    plugins: [],
-  }
+    plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
+  };

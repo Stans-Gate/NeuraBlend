@@ -1,39 +1,37 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./Hero.css";
-import SeanImg from "../assets/sean.png";
-import StanImg from "../assets/stan.png";
 import RotatingText from "./RotatingText";
 
 const teamMembers = [
   {
     name: "Joaquin Diaz",
     role: "Team Lead",
-    image: "https://via.placeholder.com/150",
+    image: "/assets/joaquin.jpg",
     bio: "Specializes in ideating intuitive and accessible user interfaces.",
   },
   {
     name: "Stan",
     role: "Full Stack Developer",
-    image: StanImg,
+    image: "/assets/stan.png",
     bio: "Expert in web development and machine learning and neural networks with 2+ years of experience.",
   },
   {
     name: "Sean",
     role: "Full Stack Developer",
-    image: SeanImg,
+    image: "/assets/sean.png",
     bio: "Passionate about creating seamless user experiences and scalable applications.",
   },
   {
     name: "Sung",
     role: "Data Scientist",
-    image: "https://via.placeholder.com/150",
+    image: "/assets/sung.jpg",
     bio: "Expert in data analysis and predictive modeling.",
   },
   {
     name: "Oscar Mendez",
     role: "Product Manager",
-    image: "https://via.placeholder.com/150",
+    image: "/assets/oscar.jpg",
     bio: "Experienced in leading cross-functional teams and delivering successful products.",
   },
 ];

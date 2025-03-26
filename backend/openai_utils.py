@@ -33,7 +33,7 @@ def generate_study_plan_text(name, grade, subject, goal):
 
     try:
         response = client.chat.completions.create(
-            model="gpt-4",
+            model="gpt-4o",
             messages=[
                 {"role": "system", "content": "You are a helpful AI tutor for K-12 students."},
                 {"role": "user", "content": prompt}
@@ -69,7 +69,7 @@ def generate_fallback_material(subject, goal):
     """
     try:
         response = client.chat.completions.create(
-            model="gpt-4",
+            model="gpt-4o",
             messages=[{"role": "user", "content": fallback_prompt}]
         )
         return response.choices[0].message.content
@@ -102,7 +102,7 @@ def generate_step_quiz(step_content):
 
     try:
         response = client.chat.completions.create(
-            model="gpt-4",
+            model="gpt-4o",
             messages=[
                 {"role": "system", "content": "You are a helpful quiz generator."},
                 {"role": "user", "content": quiz_prompt}

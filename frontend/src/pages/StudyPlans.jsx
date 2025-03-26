@@ -325,8 +325,18 @@ function StudyPlans() {
     
     if (isCorrect) {
       // correct
-      await scoreQuiz(attemptNumber, true);
-      setFeedback("Great job! That's the correct answer.");
+      const scoreResult = await scoreQuiz(attemptNumber, true);
+      let feedbackMsg = "Great job! That's the correct answer.";
+      
+      if (scoreResult && scoreResult.points_awarded > 0) {
+        feedbackMsg += ` You earned ${scoreResult.points_awarded} XP!`;
+      }
+      
+      if (scoreResult && scoreResult.kudos_awarded > 0) {
+        feedbackMsg += ` +${scoreResult.kudos_awarded} Kudos for answering correctly on your first try!`;
+      }
+      
+      setFeedback(feedbackMsg);
       setFeedbackType("success");
     } else {
       // wrong
@@ -346,7 +356,7 @@ function StudyPlans() {
   // 6) Score quiz in backend
   async function scoreQuiz(attemptNum, isCorrect) {
     const userId = localStorage.getItem("userId");
-    if (!userId) return;
+    if (!userId) return null;
     
     try {
       const resp = await fetch("http://127.0.0.1:8000/score_quiz", {
@@ -358,22 +368,10 @@ function StudyPlans() {
           is_correct: isCorrect
         })
       });
-      const data = await resp.json();
-      
-      let feedbackMessage = "";
-      if (data.points_awarded !== undefined) {
-        feedbackMessage += ` You earned ${data.points_awarded} XP!`;
-      }
-      
-      if (data.kudos_awarded && data.kudos_awarded > 0) {
-        feedbackMessage += ` +${data.kudos_awarded} Kudos for answering correctly on your first try!`;
-      }
-      
-      if (feedbackMessage) {
-        setFeedback((f) => f + feedbackMessage);
-      }
+      return await resp.json();
     } catch (err) {
       console.error("Error scoring quiz:", err);
+      return null;
     }
   }
 

@@ -8,6 +8,7 @@ import NavBar from "./components/NavBar";
 import Hero from "./pages/Hero";
 import Footer from "./components/Footer";
 import Register from "./pages/Register";
+import Shop from "./pages/Shop";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/study-plans" element={<StudyPlans />} />
             <Route path="/create-plan" element={<CreatePlan />} />
+            <Route path="/shop" element={<Shop />} />
           </Routes>
         </main>
         <Footer />
