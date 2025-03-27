@@ -127,11 +127,8 @@ neura-blend/
 
 ## Contributors
 
-- Joaquin Diaz - Graphical Designer
 - Stan Chen - Full Stack Developer & Product Manager
 - Sean Donovan - UI/UX Developer
-- Sung - Data Scientists
-- Oscar Mendez - Product Designer
 
 ## Tech Stack
 
