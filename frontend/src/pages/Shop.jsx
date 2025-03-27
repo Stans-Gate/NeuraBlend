@@ -268,7 +268,7 @@ function Shop() {
       {showLimitedTimeOffer && featuredBadges.length > 0 && (
         <div className="bg-gradient-to-r from-[#533933] to-[#fbe3bb] rounded-lg shadow-md p-6 mb-8 text-white">
           <div className="flex justify-between items-center mb-4">
-            <h3 className="text-xl font-bold">Limited Time Offer!</h3>
+            <h3 className="text-xl text-[#fbe3bb] font-bold">Limited Time Offer!</h3>
             <div className="bg-white text-purple-600 px-3 py-1 rounded-full font-mono">
               {formatTime(timeLeft)}
             </div>

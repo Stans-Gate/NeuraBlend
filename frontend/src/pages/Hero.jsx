@@ -18,7 +18,7 @@ const teamMembers = [
   },
   {
     name: "Sean Donovan",
-    role: "UI/UX Developer",
+    role: "Frontend Developer",
     image: "/assets/sean.png",
     bio: "Passionate about creating seamless user experiences and scalable applications.",
   },
@@ -26,13 +26,13 @@ const teamMembers = [
     name: "Sung",
     role: "Data Scientist",
     image: "/assets/sung.jpg",
-    bio: "Interested in data analysis and predictive modeling, incoming Evercore analyst.",
+    bio: "Interested in data analysis and predictive modeling.",
   },
   {
     name: "Oscar Mendez",
     role: "Product Designer",
     image: "/assets/oscar.jpg",
-    bio: "Interested in neuroscience, consumer psychology, and DEI.",
+    bio: "Interested in neuroscience, and consumer psychology.",
   },
 ];
 
@@ -58,8 +58,8 @@ const features = [
     icon: <FaComments className="text-4xl" />,
   },
   {
-    title: "Item Shop",
-    description: "Shop for items to enhance your learning experience.",
+    title: "Gamify Learning",
+    description: "Gain points from doing quizzes to collect badges of different rarities in shops.",
     icon: <FaShoppingBasket className="text-4xl" />,
   },
 ];

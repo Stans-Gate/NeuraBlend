@@ -22,7 +22,7 @@ def generate_study_plan_text(name, grade, subject, goal):
     Each step should include:
     - A title
     - A short, clear explanation
-    - A recommended resource (URL if available and working).
+    - A recommended resource (URL if available and working), if it's math relating, find one from the math is fun website. 
     If no valid resource is found, produce your own short reading material 
     (like a paragraph) that covers the same content.
 
