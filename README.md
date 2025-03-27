@@ -1,6 +1,6 @@
 # NeuraBlend: AI-Powered Learning Assistant
 
-![NeuraBlend Logo](/assets/logo.png)
+![NeuraBlend Logo](/frontend/public/assets/logo.png)
 
 ## Overview
 
