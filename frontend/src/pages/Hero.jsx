@@ -6,19 +6,19 @@ import RotatingText from "./RotatingText";
 const teamMembers = [
   {
     name: "Joaquin Diaz",
-    role: "Team Lead",
+    role: "Graphical Designer",
     image: "/assets/joaquin.jpg",
-    bio: "Specializes in ideating intuitive and accessible user interfaces.",
+    bio: "Specializes in ideating intuitive and accessible user interfaces with figma.",
   },
   {
-    name: "Stan",
-    role: "Full Stack Developer",
+    name: "Stan Chen",
+    role: "Full Stack Developer & Product Manager",
     image: "/assets/stan.png",
-    bio: "Expert in web development and machine learning and neural networks with 2+ years of experience.",
+    bio: "Passionate about web development, computer vision, graphics and generative AI.",
   },
   {
-    name: "Sean",
-    role: "Full Stack Developer",
+    name: "Sean Donovan",
+    role: "UI/UX Developer",
     image: "/assets/sean.png",
     bio: "Passionate about creating seamless user experiences and scalable applications.",
   },
@@ -26,13 +26,13 @@ const teamMembers = [
     name: "Sung",
     role: "Data Scientist",
     image: "/assets/sung.jpg",
-    bio: "Expert in data analysis and predictive modeling.",
+    bio: "Interested in data analysis and predictive modeling, incoming Evercore analyst.",
   },
   {
     name: "Oscar Mendez",
-    role: "Product Manager",
+    role: "Product Designer",
     image: "/assets/oscar.jpg",
-    bio: "Experienced in leading cross-functional teams and delivering successful products.",
+    bio: "Interested in neuroscience, consumer psychology, and DEI.",
   },
 ];
 
