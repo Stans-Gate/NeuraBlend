@@ -61,7 +61,6 @@ function Shop() {
                 const badgesWithRarity = badgesData.map((badge) => ({
                   ...badge,
                   rarity: determineRarity(badge.kudos_cost),
-                  progress: Math.floor(Math.random() * 100), // Simulated progress for demo
                 }));
 
                 setAvailableBadges(badgesWithRarity);
@@ -267,7 +266,7 @@ function Shop() {
 
       {/* Limited time offer */}
       {showLimitedTimeOffer && featuredBadges.length > 0 && (
-        <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg shadow-md p-6 mb-8 text-white">
+        <div className="bg-gradient-to-r from-[#533933] to-[#fbe3bb] rounded-lg shadow-md p-6 mb-8 text-white">
           <div className="flex justify-between items-center mb-4">
             <h3 className="text-xl font-bold">Limited Time Offer!</h3>
             <div className="bg-white text-purple-600 px-3 py-1 rounded-full font-mono">

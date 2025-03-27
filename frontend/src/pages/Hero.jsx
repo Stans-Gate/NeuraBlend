@@ -53,21 +53,9 @@ const features = [
     icon: <FaBrain className="text-4xl" />,
   },
   {
-    title: "24-hour Access",
-    description:
-      "Learn anytime, anywhere with our 24-hour no-interruption access guarantee.",
-    icon: <FaCog className="text-4xl spin-inf" />,
-  },
-  {
-    title: "Real-time Feedback",
-    description:
-      "Get instant feedback on your progress and areas for improvement.",
+    title: "Student Performance Report",
+    description: "Track student progress and identify areas for improvement.",
     icon: <FaComments className="text-4xl" />,
-  },
-  {
-    title: "Collaborative Learning",
-    description: "Connect with peers and experts in your field of study.",
-    icon: <FaUsers className="text-4xl" />,
   },
   {
     title: "Item Shop",
