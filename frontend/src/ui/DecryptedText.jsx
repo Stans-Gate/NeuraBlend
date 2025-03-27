@@ -46,6 +46,7 @@ export default function DecryptedText({
   parentClassName = "",
   encryptedClassName = "",
   animateOn = "hover",
+  color = "#533933",
   ...props
 }) {
   const [displayText, setDisplayText] = useState(text);
@@ -246,6 +247,7 @@ export default function DecryptedText({
             <span
               key={index}
               className={isRevealedOrDone ? className : encryptedClassName}
+              style={{ color: isRevealedOrDone ? color : "" }}
             >
               {char}
             </span>

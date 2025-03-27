@@ -49,3 +49,24 @@
 .herobutton {
   margin: 100px 0px 200px 0px
 }
+
+.card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+.spin-inf {
+  animation: spin 2s linear infinite;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #533933
+}
+
+.hero {
+  padding: 250px 0px 200px 0px
+}
+
+.feat {
+  padding: 0px 0px 100px 0px
+}

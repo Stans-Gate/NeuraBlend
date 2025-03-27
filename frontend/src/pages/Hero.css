@@ -43,3 +43,24 @@
     margin-top: 1rem;
   }
 }
+
+@keyframes glow-sweep {
+  0% { background-position: -100% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.glow-text {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #fbe3bb 55%,
+    #fbe3bb 100%,
+    transparent
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: glow-sweep 3s linear infinite;
+}
+

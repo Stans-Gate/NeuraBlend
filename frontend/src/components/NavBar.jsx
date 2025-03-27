@@ -32,7 +32,9 @@ function NavBar() {
                 <Link
                   to="/login"
                   className={`text-[#977968] hover:text-[#533933] transition-colors ${
-                    location.pathname === "/login" ? "text-[#533933] font-medium" : ""
+                    location.pathname === "/login"
+                      ? "text-[#533933] font-medium"
+                      : ""
                   }`}
                 >
                   Login
@@ -40,7 +42,9 @@ function NavBar() {
                 <Link
                   to="/register"
                   className={`text-[#977968] hover:text-[#533933] transition-colors ${
-                    location.pathname === "/register" ? "text-[#533933] font-medium" : ""
+                    location.pathname === "/register"
+                      ? "text-[#533933] font-medium"
+                      : ""
                   }`}
                 >
                   Register
@@ -52,7 +56,9 @@ function NavBar() {
                 <Link
                   to="/dashboard"
                   className={`text-[#977968] hover:text-[#533933] transition-colors ${
-                    location.pathname === "/dashboard" ? "text-[#533933] font-medium" : ""
+                    location.pathname === "/dashboard"
+                      ? "text-[#533933] font-medium"
+                      : ""
                   }`}
                 >
                   Dashboard
@@ -60,7 +66,9 @@ function NavBar() {
                 <Link
                   to="/study-plans"
                   className={`text-[#977968] hover:text-[#533933] transition-colors ${
-                    location.pathname === "/study-plans" ? "text-[#533933] font-medium" : ""
+                    location.pathname === "/study-plans"
+                      ? "text-[#533933] font-medium"
+                      : ""
                   }`}
                 >
                   Study Plans
@@ -68,7 +76,9 @@ function NavBar() {
                 <Link
                   to="/create-plan"
                   className={`text-[#977968] hover:text-[#533933] transition-colors ${
-                    location.pathname === "/create-plan" ? "text-[#533933] font-medium" : ""
+                    location.pathname === "/create-plan"
+                      ? "text-[#533933] font-medium"
+                      : ""
                   }`}
                 >
                   Create Plan
@@ -76,7 +86,9 @@ function NavBar() {
                 <Link
                   to="/shop"
                   className={`text-[#977968] hover:text-[#533933] transition-colors ${
-                    location.pathname === "/shop" ? "text-[#533933] font-medium" : ""
+                    location.pathname === "/shop"
+                      ? "text-[#533933] font-medium"
+                      : ""
                   }`}
                 >
                   Shop
