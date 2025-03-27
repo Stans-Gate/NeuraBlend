@@ -129,8 +129,8 @@ neura-blend/
 - Joaquin Diaz - Graphical Designer
 - Stan Chen - Full Stack Developer & Product Manager
 - Sean Donovan - UI/UX Developer
-- Sung - Korean Chad
-- Oscar Mendez
+- Sung - Data Scientists
+- Oscar Mendez - Product Designer
 
 ## License
 
