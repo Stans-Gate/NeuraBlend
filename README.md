@@ -123,6 +123,7 @@ neura-blend/
 - **Content Expansion**: More subjects, grade levels, and specialized learning tracks
 - **Mobile App**: Native mobile application for on-the-go learning
 - **AI Tutoring**: Real-time AI tutoring sessions with personalized feedback
+- **More Game Mechanics**: Maybe add a prize ticket machine where the student can use Kudos to purchase prize ticket to get rare badges that they can't buy in the shop.
 
 ## Contributors
 
@@ -132,6 +133,10 @@ neura-blend/
 - Sung - Data Scientists
 - Oscar Mendez - Product Designer
 
+## Tech Stack
+
+
 ## License
+![Tech Stack:](/frontend/public/assets/techstack.png)
 
 MIT License
